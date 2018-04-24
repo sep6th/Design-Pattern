@@ -57,15 +57,15 @@ class SmsSender implements ISender{
 public class SendFactory  {
 
 	public ISender sender(String type) {  
-        if ("mail".equals(type)) {  
-            return new MailSender();  
-        } else if ("sms".equals(type)) {  
-            return new SmsSender();  
-        } else {  
-            System.out.println("请输入正确的类型!");  
-            return null;  
-        }  
-    }
+        	if ("mail".equals(type)) {  
+            		return new MailSender();  
+       		} else if ("sms".equals(type)) {  
+            		return new SmsSender();  
+        	} else {  
+            		System.out.println("请输入正确的类型!");  
+            		return null;  
+        	}  
+    	}
 	
 	public static void main(String[] args) {
 		SendFactory factory = new SendFactory();
@@ -142,8 +142,8 @@ public class SendFactory  {
 public class SendFactory  {
 
 	public static MailSender getMailSender() {  
-        return new MailSender();  
-    }
+        	return new MailSender();  
+    	}
 	
 	public static SmsSender getSmsSender(){
 		return new SmsSender(); 
