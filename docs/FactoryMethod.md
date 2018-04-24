@@ -142,8 +142,8 @@ public class SendFactory  {
 public class SendFactory  {
 
 	public static MailSender getMailSender() {  
-        	return new MailSender();  
-    	}
+        return new MailSender();  
+    }
 	
 	public static SmsSender getSmsSender(){
 		return new SmsSender(); 
