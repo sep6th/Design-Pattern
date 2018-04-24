@@ -54,7 +54,7 @@ class SmsSender implements ISender{
  * Copyright (c) 2018 sep6th
  */
 
-public class SendFactory  {
+public class SenderFactory  {
 
 	public ISender sender(String type) {  
         	if ("mail".equals(type)) {  
@@ -68,7 +68,7 @@ public class SendFactory  {
     	}
 	
 	public static void main(String[] args) {
-		SendFactory factory = new SendFactory();
+		SenderFactory factory = new SenderFactory();
 		ISender sender = factory.sender("sms");
 		sender.send();
 	}
@@ -112,7 +112,7 @@ class SmsSender{
  * Copyright (c) 2018 sep6th
  */
 
-public class SendFactory  {
+public class SenderFactory  {
 
 	public MailSender getMailSender() {  
         	return new MailSender();  
@@ -123,7 +123,7 @@ public class SendFactory  {
 	}
 	
 	public static void main(String[] args) {
-		SendFactory factory = new SendFactory();
+		SenderFactory factory = new SenderFactory();
 		factory.getMailSender().send();
 	}
 	
@@ -139,7 +139,7 @@ public class SendFactory  {
  * Copyright (c) 2018 sep6th
  */
 
-public class SendFactory  {
+public class SenderFactory  {
 
 	public static MailSender getMailSender() {  
         	return new MailSender();  
@@ -150,7 +150,7 @@ public class SendFactory  {
 	}
 	
 	public static void main(String[] args) {
-		SendFactory.getMailSender().send();
+		SenderFactory.getMailSender().send();
 	}
 	
 }
