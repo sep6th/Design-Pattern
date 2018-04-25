@@ -4,3 +4,4 @@
 * [工厂模式（Factory Method）](./docs/FactoryMethod.md) 
 * [抽象工厂模式（Abstract Factory Method）](./docs/AbstractFactoryMethod.md) 
 * [单例模式（Singleton）](./docs/Singleton.md)
+* [建造者模式（Builder）](./docs/Builder.md)
