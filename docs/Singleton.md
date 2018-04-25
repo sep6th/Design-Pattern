@@ -52,7 +52,7 @@ class LazySingleton {
 但是，像这样毫无线程安全保护的类，如果我们把它放入多线程的环境下，肯定就会出现问题，如何解决？我们首先会想到对getInstance方法加synchronized关键字。  
 
 ```java
-public static synchronized LazySingleton getInstance() {
+	public static synchronized LazySingleton getInstance() {
 		if(instance == null){
 			instance = new LazySingleton();
 		}
@@ -64,7 +64,7 @@ synchronized关键字锁住的是这个对象，这样的用法，在性能上�
 
 
 ```java
-public static LazySingleton getInstance() {
+	public static LazySingleton getInstance() {
 		if(instance == null){
 			synchronized (instance) {
 				if(instance == null){
