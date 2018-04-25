@@ -64,13 +64,13 @@ Builder（给出一个抽象接口，以规范产品对象的各个组成成分�
 
 public interface Builder {
 	
-	Builder buildHead();
+    Builder buildHead();
 	
-	Builder buildBody();
+    Builder buildBody();
 	
-	Builder buildFoot();
+    Builder buildFoot();
 	
-	Product build();
+    Product build();
 	
 }  
 ```
@@ -84,32 +84,32 @@ ConcreteBuilder（实现Builder接口，针对不同的商业逻辑，具体化�
 
 public class ConcreteBuilder implements Builder {
 	
-	//创建一个Product实例，用于调用set方法
-	Product product ;
+    //创建一个Product实例，用于调用set方法
+    Product product ;
 	
-	public ConcreteBuilder(){
-		product = new Product();
-	}
+    public ConcreteBuilder(){
+	product = new Product();
+    }
 	
-	public Builder buildHead() {
-		product.setHead("建造头部部分");
-		return this;
-	}
+    public Builder buildHead() {
+	product.setHead("建造头部部分");
+	return this;
+    }
 	
-	public Builder buildBody() {
-		product.setBody("建造身体部分");
-		return this;
-	}
+    public Builder buildBody() {
+	product.setBody("建造身体部分");
+	return this;
+    }
 	
-	public Builder buildFoot() {
-		product.setFoot("建造四肢部分");
-		return this;
-	}
+    public Builder buildFoot() {
+	product.setFoot("建造四肢部分");
+	return this;
+    }
 	
-	//在建造过程完成后，提供产品的实例
-	public Product build() {
-		return product;
-	}
+    //在建造过程完成后，提供产品的实例
+    public Product build() {
+	return product;
+    }
 	
 }  
 ```
@@ -123,10 +123,10 @@ Director（调用具体建造者来创建复杂对象的各个部分，在指导
 
 public class Director {
 
-	public static Product constructProduct(Builder builder) {  
-		//按照 头部--->身体--->四肢 的顺序创建人物
-		return builder.buildHead().buildBody().buildFoot().build();
-	}
+    public static Product constructProduct(Builder builder) {  
+	//按照 头部--->身体--->四肢 的顺序创建人物
+	return builder.buildHead().buildBody().buildFoot().build();
+    }
 }  
 ```
 测试
@@ -140,9 +140,9 @@ public class Director {
 public class Test {  
 
     public static void main(String[] args) {
-		Product product = Director.constructProduct(new ConcreteBuilder()); 
-		System.out.println(product.toString());
-	}  
+	Product product = Director.constructProduct(new ConcreteBuilder()); 
+	System.out.println(product.toString());
+    }  
     
 } 
 ```
@@ -217,13 +217,13 @@ public enum ResultCode {
     NOT_FOUND(404),		//接口不存在  
     INTERNAL_SERVER_ERROR(500); //服务器内部错误  
 	
-	private final Integer code;  
+    private final Integer code;  
 
-	ResultCode(Integer code) {
+    ResultCode(Integer code) {
         this.code = code;
     }
 
-	public Integer code() {
+    public Integer code() {
         return code;
     }
 	
