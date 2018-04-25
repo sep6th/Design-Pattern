@@ -25,4 +25,6 @@
 原则是尽量使用合成/聚合的方式，而不是使用继承。  
 
 ## 参考
-[Java开发中的23种设计模式详解](https://blog.csdn.net/doymm2008/article/details/13288067)
+[Java之美【从菜鸟到高手演变】之设计模式](https://blog.csdn.net/zhangerqing/article/details/8194653)  
+[《java与模式》读书心得](https://blog.csdn.net/column/details/loveyun.html)  
+[java设计模式之建造者模式](https://www.cnblogs.com/kangsir/p/6653233.html)    
