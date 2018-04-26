@@ -23,33 +23,33 @@
 
 class Adapee {
 
-	public void tow(){
-		System.out.println("两孔");
-	}
+    public void tow(){
+	System.out.println("两孔");
+    }
 	
 }
 
 interface Target {
 	
-	void tow();
-	void three();
+    void tow();
+    void three();
 	
 }
 
 public class Adaper extends Adapee implements Target {
 
-	@Override
-	public void three() {
-		System.out.println("三孔");
-	}
+    @Override
+    public void three() {
+	System.out.println("三孔");
+    }
 	
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		
-		Adaper adaper = new Adaper();
-		adaper.tow();
-		adaper.three();
+	Adaper adaper = new Adaper();
+	adaper.tow();
+	adaper.three();
 		
-	}
+    }
 	
 }
 ```
@@ -63,29 +63,29 @@ public class Adaper extends Adapee implements Target {
 ```java
 public class Adaper implements Target {
 
-	Adapee adapee;
+    Adapee adapee;
 	
-	public Adaper() {
-		adapee = new Adapee();
-	}
+    public Adaper() {
+	adapee = new Adapee();
+    }
 	
-	@Override
-	public void three() {
-		System.out.println("三孔");
-	}
+    @Override
+    public void three() {
+	System.out.println("三孔");
+    }
 	
-	@Override
-	public void tow() {
-		adapee.tow();
-	}
+    @Override
+    public void tow() {
+	adapee.tow();
+    }
 	
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		
-		Adaper adaper = new Adaper();
-		adaper.tow();
-		adaper.three();
+	Adaper adaper = new Adaper();
+	adaper.tow();
+	adaper.three();
 		
-	}
+    }
 	
 }
 ```
@@ -102,37 +102,37 @@ public class Adaper implements Target {
 
 interface IBase {
 	
-	void one();
-	void tow();
-	void three();
+    void one();
+    void tow();
+    void three();
 	
 }
 
 abstract class Base implements IBase {
 	
-	@Override
-	public void one() {}
+    @Override
+    public void one() {}
 
-	@Override
-	public void tow() {}
+    @Override
+    public void tow() {}
 
-	@Override
-	public void three() {}
+    @Override
+    public void three() {}
 	
 }
 
 
 public class Adaper extends Base {
 
-	@Override
-	public void three() {
-		System.out.println("这才是我想要的！");
-	}
+    @Override
+    public void three() {
+        System.out.println("这才是我想要的！");
+    }
 
-	public static void main(String[] args) {
-		Adaper adaper = new Adaper();
-		adaper.three();
-	}
+    public static void main(String[] args) {
+        Adaper adaper = new Adaper();
+        adaper.three();
+    }
 	
 }
 ```
@@ -144,9 +144,4 @@ public class Adaper extends Base {
 对象适配器模式：当希望将一个对象转换成满足另一个新接口的对象时，可以创建一个Adaper类，持有原类的一个实例，在Adaper类的方法中，调用实例的方法就行。  
 
 接口适配器模式：当不希望实现一个接口中所有的方法时，可以创建一个抽象类，实现所有方法，我们再写实现类的时候，继承抽象类即可。
-
-
-
-
-
 
