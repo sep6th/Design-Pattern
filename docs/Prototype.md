@@ -25,6 +25,7 @@ public class Prototype implements Cloneable {
 }
 ```
 **对象深、浅复制**  
+
 浅复制：将一个对象复制后，基本数据类型的变量都会重新创建，而引用类型，指向的还是原对象所指向的。  
 
 深复制：将一个对象复制后，不论是基本数据类型还有引用类型，都是重新创建的。简单来说，就是深复制进行了完全彻底的复制，而浅复制不彻底。注意：深复制需要对象及对象里的引用类型序列化，  
@@ -56,7 +57,7 @@ public class Prototype implements Cloneable, Serializable {
 		return obj;
 	}
 
-	/* 浅复制 */  
+    /* 浅复制 */  
     public Object shallowClone() throws CloneNotSupportedException {  
         Prototype proto = (Prototype) super.clone();  
         return proto;  
@@ -82,8 +83,8 @@ public class Prototype implements Cloneable, Serializable {
     		/* 浅复制 */
     		Prototype p1 = (Prototype) p.shallowClone();
     		
-    		System.out.println(p.hashCode());			//366712642
-    		System.out.println(p1.hashCode());			//1829164700
+    		System.out.println(p.hashCode());		//366712642
+    		System.out.println(p1.hashCode());		//1829164700
     		/* 引用类型，指向的还是原对象所指向的，hashCode一致 */
     		System.out.println(p.getObj().hashCode());	//2018699554
     		System.out.println(p1.getObj().hashCode());	//2018699554
@@ -91,8 +92,8 @@ public class Prototype implements Cloneable, Serializable {
     		/* 深复制 */
     		Prototype p2 = (Prototype) p.deepClone();
     		
-    		System.out.println(p.hashCode());			//366712642
-    		System.out.println(p2.hashCode());			//1283928880
+    		System.out.println(p.hashCode());		//366712642
+    		System.out.println(p2.hashCode());		//1283928880
     		/* 引用类型，指向的还是原对象所指向的，hashCode不一致 */
     		System.out.println(p.getObj().hashCode());	//2018699554
     		System.out.println(p2.getObj().hashCode());	//295530567
@@ -111,6 +112,8 @@ public class Prototype implements Cloneable, Serializable {
 class SerializableObject implements Serializable {  
     private static final long serialVersionUID = 1L;  
 }
-```
+```  
+
 **扩展**  
+
 [《JAVA与模式》26天系列—第6天—原型模式](https://blog.csdn.net/m13666368773/article/details/7690559)
