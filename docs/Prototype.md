@@ -11,16 +11,16 @@
 
 public class Prototype implements Cloneable {
 
-	/** 
+    /** 
      * 实现Cloneable接口，覆写clone方法
      * Cloneable接口是个空接口，可以任意定义实现类的方法名
      * @return 从自身克隆出来的对象 
-	 * @throws CloneNotSupportedException 
+     * @throws CloneNotSupportedException 
      */
-	public Prototype clone() throws CloneNotSupportedException {
-		Prototype prototype = (Prototype) super.clone();
-		return prototype;
-	}  
+    public Prototype clone() throws CloneNotSupportedException {
+	Prototype prototype = (Prototype) super.clone();
+	return prototype;
+    }  
 	
 }
 ```
@@ -44,18 +44,18 @@ public class Prototype implements Cloneable, Serializable {
     private SerializableObject obj;
     
     public Prototype(int num, SerializableObject obj) {
-		super();
-		this.num = num;
-		this.obj = obj;
-	}
+	super();
+	this.num = num;
+	this.obj = obj;
+    }
 
-	public int getNum() {
-		return num;
-	}
+    public int getNum() {
+	return num;
+    }
 
-	public SerializableObject getObj() {
-		return obj;
-	}
+    public SerializableObject getObj() {
+	return obj;
+    }
 
     /* 浅复制 */  
     public Object shallowClone() throws CloneNotSupportedException {  
@@ -80,38 +80,43 @@ public class Prototype implements Cloneable, Serializable {
     public static void main(String[] args) {
     	Prototype p = new Prototype(6, new SerializableObject());
     	try {
-    		/* 浅复制 */
-    		Prototype p1 = (Prototype) p.shallowClone();
-    		
-    		System.out.println(p.hashCode());		//366712642
-    		System.out.println(p1.hashCode());		//1829164700
-    		/* 引用类型，指向的还是原对象所指向的，hashCode一致 */
-    		System.out.println(p.getObj().hashCode());	//2018699554
-    		System.out.println(p1.getObj().hashCode());	//2018699554
-    		
-    		/* 深复制 */
-    		Prototype p2 = (Prototype) p.deepClone();
-    		
-    		System.out.println(p.hashCode());		//366712642
-    		System.out.println(p2.hashCode());		//1283928880
-    		/* 引用类型，指向的还是原对象所指向的，hashCode不一致 */
-    		System.out.println(p.getObj().hashCode());	//2018699554
-    		System.out.println(p2.getObj().hashCode());	//295530567
-    		
-		} catch (CloneNotSupportedException e) {
-			System.out.println("浅复制失败！");
-		} catch (ClassNotFoundException e) {
-			System.out.println("深复制失败！");
-		} catch (IOException e) {
-			System.out.println("深复制失败！");
-		}
+    	    /* 浅复制 */
+    	    Prototype p1 = (Prototype) p.shallowClone();
+
+    	    System.out.println(p.hashCode());		//366712642
+    	    System.out.println(p1.hashCode());		//1829164700  
+
+    	    /* 引用类型，指向的还是原对象所指向的，hashCode一致 */
+    	    System.out.println(p.getObj().hashCode());	//2018699554
+    	    System.out.println(p1.getObj().hashCode());	//2018699554
+    	
+    	    /* 深复制 */
+    	    Prototype p2 = (Prototype) p.deepClone();
+
+    	    System.out.println(p.hashCode());		//366712642
+    	    System.out.println(p2.hashCode());		//1283928880  
+
+    	    /* 引用类型，指向的还是原对象所指向的，hashCode不一致 */
+    	    System.out.println(p.getObj().hashCode());	//2018699554
+    	    System.out.println(p2.getObj().hashCode());	//295530567
+
+	} catch (CloneNotSupportedException e) {
+	    System.out.println("浅复制失败！");
+	} catch (ClassNotFoundException e) {
+	    System.out.println("深复制失败！");
+	} catch (IOException e) {
+	    System.out.println("深复制失败！");
 	}
-  
+    }
+
 }  
 
 class SerializableObject implements Serializable {  
+
     private static final long serialVersionUID = 1L;  
-}
+    
+}  
+
 ```  
 
 **扩展**  
