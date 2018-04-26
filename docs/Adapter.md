@@ -23,7 +23,7 @@
 
 class Adapee {
 
-    public void tow(){
+    public void two(){
 	System.out.println("两孔");
     }
 	
@@ -31,7 +31,7 @@ class Adapee {
 
 interface Target {
 	
-    void tow();
+    void two();
     void three();
 	
 }
@@ -46,7 +46,7 @@ public class Adaper extends Adapee implements Target {
     public static void main(String[] args) {
 		
 	Adaper adaper = new Adaper();
-	adaper.tow();
+	adaper.two();
 	adaper.three();
 		
     }
@@ -75,14 +75,14 @@ public class Adaper implements Target {
     }
 	
     @Override
-    public void tow() {
-	adapee.tow();
+    public void two() {
+	adapee.two();
     }
 	
     public static void main(String[] args) {
 		
 	Adaper adaper = new Adaper();
-	adaper.tow();
+	adaper.two();
 	adaper.three();
 		
     }
@@ -103,7 +103,7 @@ public class Adaper implements Target {
 interface IBase {
 	
     void one();
-    void tow();
+    void two();
     void three();
 	
 }
@@ -114,7 +114,7 @@ abstract class Base implements IBase {
     public void one() {}
 
     @Override
-    public void tow() {}
+    public void two() {}
 
     @Override
     public void three() {}
