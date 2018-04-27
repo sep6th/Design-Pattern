@@ -65,8 +65,8 @@ public class Adaper implements Target {
 
     Adapee adapee;
 	
-    public Adaper() {
-	adapee = new Adapee();
+    public Adaper(Adapee adapee) {
+	this.adapee = adapee;
     }
 	
     @Override
@@ -81,7 +81,7 @@ public class Adaper implements Target {
 	
     public static void main(String[] args) {
 		
-	Adaper adaper = new Adaper();
+	Adaper adaper = new Adaper(new Adapee());
 	adaper.two();
 	adaper.three();
 		
