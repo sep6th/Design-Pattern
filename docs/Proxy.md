@@ -77,9 +77,9 @@ public class ServiceProxy implements InvocationHandler {
             System.out.println("权限不够");  
             return result;
         }
-	    result = method.invoke(target, args);  
-	    return result;
-	}
+	result = method.invoke(target, args);  
+	return result;
+    }
 	
     /**
      * 执行顺序：2
@@ -90,12 +90,14 @@ public class ServiceProxy implements InvocationHandler {
     } 
 	
     public static void main(String[] args) {
+    
 	// 创建委托类实例，即被代理的类对象  
         ServiceImpl target = new ServiceImpl();  
         // 创建动态代理类  
         ServiceProxy proxy = new ServiceProxy(target);
         Service service = (Service) proxy.getProxyInstance();
         service.sayHello();
+	
     }
 
 }
@@ -142,7 +144,7 @@ public class CglibProxyFactory implements MethodInterceptor {
         /*1. 工具类*/
         Enhancer en = new Enhancer();
         /*2. 设置父类（以子类方式在内存中动态创建代理对象，需要知道子类的父类，
-         *    此处为target，即是PersonDao的实例对象）
+         *   此处为target，即是PersonDao的实例对象）
          */
         en.setSuperclass(target.getClass());
         /*3. 设置回调函数（执行target类里的方法时，会触发拦截器中的方法）*/
