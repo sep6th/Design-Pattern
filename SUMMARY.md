@@ -9,5 +9,5 @@
 * [适配器模式（Adapter）](./docs/Adapter.md)  
 * [装饰模式（Decorator）](./docs/Decorator.md)  
 * [代理模式（Proxy）](./docs/Proxy.md)  
-
+* [外观模式（Facade）](./docs/Facade.md)  
 
