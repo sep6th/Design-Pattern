@@ -22,7 +22,7 @@
 
 public interface Service {
 
-	void sayHello();
+    void sayHello();
 	
 }
 ```
@@ -35,14 +35,14 @@ public interface Service {
 
 public class ServiceImpl implements Service {
 
-	@Override
-	public void sayHello() {
-		System.out.println("hello sep6th!");
-	}
+    @Override
+    public void sayHello() {
+	System.out.println("hello sep6th!");
+    }
 	
-	public boolean auth(){
-		return true;
-	}
+    public boolean auth(){
+	return true;
+    }
 
 }
 ```
@@ -59,43 +59,44 @@ import java.lang.reflect.Proxy;
 
 public class ServiceProxy implements InvocationHandler {
 
-	private Object target;
-	/*执行顺序：1*/
-	public ServiceProxy(Object target) {
-		this.target = target;
-	}
+    private Object target;
+    
+    /*执行顺序：1*/
+    public ServiceProxy(Object target) {
+	this.target = target;
+    }
         
-        /*执行顺序：3*/
-	@Override
-	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		Object result = null;
-		if (!(target instanceof ServiceImpl)) {  
+    /*执行顺序：3*/
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+	Object result = null;
+	if (!(target instanceof ServiceImpl)) {  
             System.out.println("不能代理该对象");  
             return result;  
         } else if(!((ServiceImpl) target).auth()) {
-        	System.out.println("权限不够");  
+            System.out.println("权限不够");  
             return result;
         }
-		result = method.invoke(target, args);  
-		return result;
+	    result = method.invoke(target, args);  
+	    return result;
 	}
 	
-	/**
-	 * 执行顺序：2
-	 * 返回委托类接口的实例对象
-	 */
-	public Object getProxyInstance() {  
+    /**
+     * 执行顺序：2
+     * 返回委托类接口的实例对象
+     */
+    public Object getProxyInstance() {  
         return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);  
     } 
 	
-	public static void main(String[] args) {
-		// 创建委托类实例，即被代理的类对象  
+    public static void main(String[] args) {
+	// 创建委托类实例，即被代理的类对象  
         ServiceImpl target = new ServiceImpl();  
         // 创建动态代理类  
         ServiceProxy proxy = new ServiceProxy(target);
         Service service = (Service) proxy.getProxyInstance();
         service.sayHello();
-	}
+    }
 
 }
 ```
@@ -134,8 +135,10 @@ public class CglibProxyFactory implements MethodInterceptor {
     public CglibProxyFactory(Object target) {
         this.target = target;
     }
+    
     /* 给目标对象创建代理对象*/
     public Object getProxyInstance(){
+    
         /*1. 工具类*/
         Enhancer en = new Enhancer();
         /*2. 设置父类（以子类方式在内存中动态创建代理对象，需要知道子类的父类，
@@ -146,6 +149,7 @@ public class CglibProxyFactory implements MethodInterceptor {
         en.setCallback(this);
         /*4. 创建子类(代理对象)*/
         return en.create();
+	
     }
 
     /*
@@ -153,9 +157,9 @@ public class CglibProxyFactory implements MethodInterceptor {
      * 并在子类中采用方法拦截的技术拦截所有父类方法的调用，并顺势植入横切逻辑。
      */
     @Override
-    public Object intercept(Object obj, Method method, Object[] args,
-            MethodProxy proxy) throws Throwable {
-        /*添加其它代码*/
+    public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
+        
+	/*添加其它代码*/
         System.out.println("--开启事务--");
 
         /*执行目标对象的方法*/
@@ -165,6 +169,7 @@ public class CglibProxyFactory implements MethodInterceptor {
         System.out.println("--提交事务--");
 
         return returnValue;
+	
     }
 
 }
@@ -180,6 +185,7 @@ public class Mytest {
 
     @Test
     public void test() {
+    
         /*目标对象*/
         PersonDao target = new PersonDao();
         System.out.println(target.getClass());
@@ -190,6 +196,7 @@ public class Mytest {
 
         /*执行代理对象的方法*/
         proxy.delete();
+	
     }
 }
 ```
