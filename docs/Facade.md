@@ -21,42 +21,42 @@
 
 class ModulA {
 	
-	public void start(){
-		System.out.println("ModulA");
-	}
+    public void start(){
+	System.out.println("ModulA");
+    }
 	
-	/* ...与其他模块交叉调用的方法 */
+    /* ...与其他模块交叉调用的方法 */
 	
 }
 
 class ModulB {
 	
-	public void start(){
-		System.out.println("ModulB");
-	}
+    public void start(){
+	System.out.println("ModulB");
+    }
 	
-	/* ...与其他模块交叉调用的方法 */
+    /* ...与其他模块交叉调用的方法 */
 	
 }
 
 public class Facade {
 	
-	ModulA a = new ModulA();
-	ModulB b = new ModulB();
+    ModulA a = new ModulA();
+    ModulB b = new ModulB();
 	
-	public void methodA(){
-		a.start();
-	}
+    public void methodA(){
+	a.start();
+    }
 	
-	public void methodB(){
-		b.start();
-	}
+    public void methodB(){
+	b.start();
+    }
 	
-	public static void main(String[] args) {
-		Facade f = new Facade();
-		f.methodA();
-		f.methodB();
-	}
+    public static void main(String[] args) {
+	Facade f = new Facade();
+	f.methodA();
+	f.methodB();
+    }
 	
 }
 ```
