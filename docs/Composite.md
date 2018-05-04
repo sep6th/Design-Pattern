@@ -25,7 +25,7 @@ import java.util.List;
 
 public abstract class Component {
 
-	/** 
+    /** 
      * 输出组建自身的名称 
      */  
     public abstract void printStruct(String preStr);  
@@ -153,7 +153,7 @@ Leaf 树叶构件角色
 
 public class Leaf extends Component {
 
-	/** 
+    /** 
      * 叶子对象的名字 
      */  
     private String name;  
@@ -166,17 +166,17 @@ public class Leaf extends Component {
         this.name = name;  
     }
 	
-	/** 
+    /** 
      * 输出叶子对象的结构，叶子对象没有子对象，也就是输出叶子对象的名字 
      * @param preStr 前缀，主要是按照层级拼接的空格，实现向后缩进 
      */  
-	@Override
-	public void printStruct(String preStr) {
-		System.out.println(preStr + "-" + name);
-	}
+    @Override
+    public void printStruct(String preStr) {
+    	System.out.println(preStr + "-" + name);
+    }
 
 	
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         Component root = new Composite("服装");  
         Component c1 = new Composite("男装");  
         Component c2 = new Composite("女装");  
@@ -194,7 +194,7 @@ public class Leaf extends Component {
         c2.addChild(leaf4);  
   
         root.printStruct("");
-	}
+    }
 	
 }
 ```
