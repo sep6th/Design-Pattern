@@ -10,4 +10,6 @@
 * [装饰模式（Decorator）](./docs/Decorator.md)  
 * [代理模式（Proxy）](./docs/Proxy.md)  
 * [外观模式（Facade）](./docs/Facade.md)  
-
+* [桥接模式（Bridge）](./docs/Bridge.md)  
+* [组合模式（Composite）](./docs/Composite.md)  
+* [享元模式（Flyweight）](./docs/Flyweight.md)  
