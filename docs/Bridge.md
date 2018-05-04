@@ -21,13 +21,13 @@
 
 public abstract class Abstraction {
 
-	protected Implementor impl;
+    protected Implementor impl;
 	
-	public Abstraction(Implementor impl){  
+    public Abstraction(Implementor impl){  
         this.impl = impl;  
     }
 	
-	public void operation(){  
+    public void operation(){  
         impl.operationImpl();  
     }
 	
@@ -36,11 +36,11 @@ public abstract class Abstraction {
 
 class RefinedAbstraction extends Abstraction {
 
-	public RefinedAbstraction(Implementor impl) {
-		super(impl);
-	}
+    public RefinedAbstraction(Implementor impl) {
+	super(impl);
+    }
 	
-	public void otherOperation(){}
+    public void otherOperation(){}
 	
 }
 ```
@@ -55,16 +55,16 @@ class RefinedAbstraction extends Abstraction {
 
 public abstract class Implementor {
 
-	public abstract void operationImpl();
+    public abstract void operationImpl();
 	
 }
 
 class ConcreteImplementor extends Implementor {
 
-	@Override
-	public void operationImpl() {
-		System.out.println("具体操作");
-	}
+    @Override
+    public void operationImpl() {
+	System.out.println("具体操作");
+    }
 	
 }
 ```
@@ -78,10 +78,10 @@ class ConcreteImplementor extends Implementor {
 
 public class Test {
 
-	public static void main(String[] args) {
-		Abstraction ab = new RefinedAbstraction(new ConcreteImplementor());
-		ab.operation();
-	}
+    public static void main(String[] args) {
+	Abstraction ab = new RefinedAbstraction(new ConcreteImplementor());
+	ab.operation();
+    }
 
 }
 ```
