@@ -14,4 +14,9 @@
 * [组合模式（Composite）](./docs/Composite.md)  
 * [享元模式（Flyweight）](./docs/Flyweight.md)  
 * [策略模式（Strategy）](./docs/Strategy.md)   	 
-* [模板方法模式（Template Method）](./docs/TemplateMethod.md)   	
+* [模板方法模式（Template Method）](./docs/TemplateMethod.md)     	
+* [观察者模式模式（Observer）](./docs/Observer.md)   	
+* [模式（Observer）](./docs/.md)  
+* [模式（Observer）](./docs/.md)  
+
+
