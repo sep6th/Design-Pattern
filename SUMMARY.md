@@ -13,5 +13,5 @@
 * [桥接模式（Bridge）](./docs/Bridge.md)  
 * [组合模式（Composite）](./docs/Composite.md)  
 * [享元模式（Flyweight）](./docs/Flyweight.md)  
-* [策略模式（Strategy）](./docs/Strategy.md)  
-
+* [策略模式（Strategy）](./docs/Strategy.md)   	 
+* [模板方法模式（TemplateMethod）](./docs/TemplateMethod.md)   	
