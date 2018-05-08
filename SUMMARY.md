@@ -15,8 +15,14 @@
 * [享元模式（Flyweight）](./docs/Flyweight.md)  
 * [策略模式（Strategy）](./docs/Strategy.md)   	 
 * [模板方法模式（Template Method）](./docs/TemplateMethod.md)     	
-* [观察者模式模式（Observer）](./docs/Observer.md)   	
-* [模式（Observer）](./docs/.md)  
-* [模式（Observer）](./docs/.md)  
+* [观察者模式（Observer）](./docs/Observer.md)   	
+* [迭代子模式（Iterator）](./docs/Iterator.md)  
+* [责任链模式（Chain of Responsibility）](./docs/ChainOfResponsibility.md)  
+* [命令模式（Command）](./docs/Command.md)  
+* [备忘录模式（Memento）](./docs/Memento.md)  
+* [状态模式（State）](./docs/State.md)  
+* [访问者模式（Visitor）](./docs/Visitor.md)  
+* [中介者模式（Mediator）](./docs/Mediator.md)  
+* [解释器模式（Interpreter）](./docs/Interpreter.md)  
 
 
