@@ -22,7 +22,7 @@
 * [备忘录模式（Memento）](./docs/Memento.md)  
 * [状态模式（State）](./docs/State.md)  
 * [访问者模式（Visitor）](./docs/Visitor.md)  
-* [中介者模式（Mediator）](./docs/Mediator.md)  
+* [中介者模式（Mediator）](./docs/Mediator.md)   
 * [解释器模式（Interpreter）](./docs/Interpreter.md)  
 
 
