@@ -78,9 +78,9 @@ public class Context {
 
 public class Test {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		
-		State state = new State();  
+	State state = new State();  
         Context context = new Context(state);  
           
         //设置online状态  
@@ -91,7 +91,7 @@ public class Test {
         state.setValue("offline");  
         context.method();
 
-	}
+    }
 
 }
 ```
